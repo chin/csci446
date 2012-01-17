@@ -4,10 +4,9 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text.html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/master.css" />
-		<script type="text/javascript" src="javascript/validate.js"></script>
+		<script type="text/javascript" src="javascript/validate.js">{ alert("Surely you should feel something!"); }</script>
 		<title>Life Figure-Outer Application</title>
 	</head>
-
 <body bgcolor="#AAAAAA">
 	<div id="all">
 		<div id="div1">
@@ -37,16 +36,15 @@
 					<option value="audi">Normal. Absolutely Normal.</option>
 					</select>
 					</td></tr>
-					<tr><td></td><td><input type="button" value="Feel me!" id="button" /></form>
+					<tr><td></td><td><input type="button" value="Feel me!" id="button" onclick="show_alert()" /></form>
 					</td></tr></table>
 			<div id="div2">
 				<h2 id="h2"><b>Current Progress in Life</b></h2>
 				<p id="p2">Mediocre. You should really enjoy life more.</p>
 			</div>
 		</div>
-		
-	
 	</div>
+	<div id="foot">(C) 2011 Borg-Like Monstrosit of Mind Control, Inc. All rights reserved.</div>
 </body>
 
 </html>
