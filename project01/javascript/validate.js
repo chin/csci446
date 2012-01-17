@@ -1,1 +1,3 @@
-{ alert("Surely you should feel something!"); }
+function popup(){ 
+		alert("Surely you should feel something!")
+}
