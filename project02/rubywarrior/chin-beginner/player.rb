@@ -2,22 +2,22 @@ class Player
 	@prev_health
 	
 	def play_turn(warrior)
-		if warrior.feel.empty?
-			if warrior.health < 20
-				if @prev_health >= warrior.health
-                                        warrior.walk!
-                                else
-					warrior.rest!
+		if warrior.health < 20
+			if @prev_health > warrior.health
+				if warrior.feel.empty?				
+					warrior.walk!
+				else
+					warrior.attack!
 				end
-			else
-				warrior.walk!
+			else 
+				warrior.rest!
 			end
 		else
-			#if  warrior.health < 20
-                        #	if @prev_health > warrior.health
-                         #       	warrior.attack!
-                        #	end
-			warrior.attack!
+			if warrior.feel.empty?				
+				warrior.walk!
+			else
+				warrior.attack!
+			end
 		end
 		@prev_health = warrior.health
 	end
