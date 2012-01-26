@@ -6,6 +6,8 @@ class Player
 			if @prev_health > warrior.health
 				if warrior.feel.empty?				
 					warrior.walk!
+				elsif warrior.feel.captive?
+					warrior.rescue!
 				else
 					warrior.attack!
 				end
@@ -15,6 +17,8 @@ class Player
 		else
 			if warrior.feel.empty?				
 				warrior.walk!
+			elsif warrior.feel.captive?
+				warrior.rescue!
 			else
 				warrior.attack!
 			end
