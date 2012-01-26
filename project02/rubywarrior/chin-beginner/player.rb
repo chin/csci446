@@ -30,7 +30,7 @@ class Player
 					elsif warrior.feel(:backward).captive?
 						warrior.rescue!(:backward)
 					else
-						warrior.attack!(:backward)
+						warrior.pivot!
 					end
 				end
 			else
