@@ -1,9 +1,9 @@
 class Player
-	@previous_health
+	@prev_health
+	
 	def play_turn(warrior)
-		@previous_health = warrior.health
-		if @previous_health > warrior.health
-			warrior.rest!
+		if  @prev_health > warrior.health
+			warrior.attack!
 		elsif warrior.feel.empty?
 			if warrior.health != 20
 				warrior.rest!
@@ -13,5 +13,6 @@ class Player
 		else
 			warrior.attack!
 		end
+		@prev_health = warrior.health
 	end
 end
