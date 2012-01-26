@@ -15,6 +15,13 @@ class Player
 				warrior.rest!
 			end
 		else
+			
+			if warrior.feel(:backward).empty?				
+				warrior.walk(:backward)!
+			elsif warrior.feel(:backward).captive?
+				warrior.rescue!(:backward)
+			else
+				warrior.attack!(:backward)
 			if warrior.feel.empty?				
 				warrior.walk!
 			elsif warrior.feel.captive?
