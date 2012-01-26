@@ -11,7 +11,11 @@ class Player
 		elsif warrior.health < 20
 			if @prev_health > warrior.health
 				if warrior.feel.empty?				
-					warrior.walk!
+					if warrior.look.empty?			
+						warrior.walk!
+					else
+						warrior.shoot!					
+					end
 				elsif warrior.feel.captive?
 					warrior.rescue!
 				else
@@ -34,8 +38,12 @@ class Player
 					end
 				end
 			else
-				if warrior.feel.empty?				
-					warrior.walk!
+				if warrior.feel.empty?	
+					if warrior.look.empty? 
+						warrior.walk!					
+					else
+						warrior.shoot!					
+					end
 				elsif warrior.feel.captive?
 					warrior.rescue!
 				else
