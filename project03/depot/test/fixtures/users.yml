@@ -4,10 +4,10 @@
 
 one:
   name: dave
-  hased_password: <%= User.encrypt_password('secret', SALT) %>
+  hashed_password: <%= User.encrypt_password('secret', SALT) %>
   salt: <%= SALT %>
 
 two:
   name: MyString
-  hased_password: MyString
+  hashed_password: MyString
   salt: MyString

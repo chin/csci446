@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     Digest::SHA2.hexdigest(password + "wibble" + salt)
   end
   
-  def password=(password)
+  def password= (password)
     @password = password
     
     if password.present?
