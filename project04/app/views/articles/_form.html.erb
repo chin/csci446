@@ -21,17 +21,9 @@
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :n_edited %><br />
-    <%= f.number_field :n_edited %>
+    <%= f.text_area :body, :rows => 6%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save Changes" %>
   </div>
 <% end %>
