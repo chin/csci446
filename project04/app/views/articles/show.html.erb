@@ -1,12 +1,13 @@
 <% content_for :show do %>
     <%= '... whats "Articl" in Spanish anyway?' %>
 <% end %>
+<br><br>
 <p id="notice"><%= notice %></p>
 
-<%= link_to image_tag('icons/arrow_left.png') + 'list all articles', articles_path %>
-<%= link_to image_tag('icons/email_edit.png') + 'edit', edit_article_path(@article) %>
-<%= link_to image_tag('icons/delete.png') + 'delete', @article,:confirm => 'Are you for sure?', :method => :delete %>
-<%= mail_to '', image_tag('icons/email.png') + 'email', :subject =>  @article.title, :body => request.url%>
+<%= link_to image_tag('icons/arrow_left.png') + 'list all articles', articles_path, :title => 'back' %>
+<%= link_to image_tag('icons/email_edit.png') + 'edit', edit_article_path(@article), :title => 'edit' %>
+<%= link_to image_tag('icons/delete.png') + 'delete', @article,:confirm => 'Are you for sure?', :method => :delete, :title => 'delete' %>
+<%= mail_to '', image_tag('icons/email.png') + 'email', :subject =>  @article.title, :body => request.url, :title => 'email' %>
 
 <p>
   <%= @article.title %>

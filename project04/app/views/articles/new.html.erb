@@ -1,7 +1,8 @@
 <% content_for :new do %>
     <%= ['... not just for the country of Spain'] %>
 <% end %>
-<%= link_to 'list all articels', articles_path %>
+<br><br>
+<%= link_to image_tag('icons/arrow_left.png') + ' list all articles', articles_path, :title => 'back'%>
 <h1>Creating a new article</h1>
 
 <%= render 'form' %>

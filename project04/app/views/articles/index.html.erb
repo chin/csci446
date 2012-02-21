@@ -1,6 +1,7 @@
 <% content_for :index do %>
     <%= '... with a name .com hipsters love' %>
 <% end %>
+<br><br>
 <h1>All the World's Articles</h1>
 
 <%= link_to 'Create an Article', new_article_path %>
@@ -24,12 +25,11 @@
     <td><%= article.body %></td>
     <td><%= article.created_at.strftime("%a, %b. %d %Y") %></td>
     <td><%= article.n_edited %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', article, :title => 'Show' %></td>
+    <td><%= link_to 'Edit', edit_article_path(article), :title => 'Edit' %></td>
+    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete, :title => 'delete' %></td>
   </tr>
 <% end %>
 </table>
-
 
 <br />
