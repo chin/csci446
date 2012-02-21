@@ -1,3 +1,6 @@
+<% content_for :show do %>
+    <%= '... whats "Articl" in Spanish anyway?' %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <%= link_to image_tag('icons/arrow_left.png') + 'list all articles', articles_path %>
@@ -14,7 +17,7 @@
   <%= @article.author %>
   <%= @article.n_edited %>
   <b> edits since </b>
-  <%= @article.date.strftime("%b. %d. %Y") %>
+  <%= @article.created_at.strftime("%a, %b. %d %Y") %>
 </p>
 
 <p>

@@ -1,5 +1,9 @@
-<h1>New article</h1>
+<% content_for :new do %>
+    <%= ['... not just for the country of Spain'] %>
+<% end %>
+<%= link_to 'list all articels', articles_path %>
+<h1>Creating a new article</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', articles_path %>
+

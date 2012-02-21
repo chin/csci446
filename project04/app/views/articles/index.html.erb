@@ -1,12 +1,17 @@
-<h1>Listing articles</h1>
+<% content_for :index do %>
+    <%= '... with a name .com hipsters love' %>
+<% end %>
+<h1>All the World's Articles</h1>
+
+<%= link_to 'Create an Article', new_article_path %>
 
 <table>
   <tr>
     <th>Title</th>
     <th>Author</th>
     <th>Body</th>
-    <th>Date</th>
-    <th>N edited</th>
+    <th>Created at</th>
+    <th>Edits</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,7 +22,7 @@
     <td><%= article.title %></td>
     <td><%= article.author %></td>
     <td><%= article.body %></td>
-    <td><%= article.date %></td>
+    <td><%= article.created_at.strftime("%a, %b. %d %Y") %></td>
     <td><%= article.n_edited %></td>
     <td><%= link_to 'Show', article %></td>
     <td><%= link_to 'Edit', edit_article_path(article) %></td>
@@ -27,5 +32,3 @@
 </table>
 
 <br />
-
-<%= link_to 'New Article', new_article_path %>
