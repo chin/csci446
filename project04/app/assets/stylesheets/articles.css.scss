@@ -1,26 +1,28 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#header {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 39px;
-}
-#titles {
-background: grey;
-}
-#table_wrapper{background:grey;
-border:1px solid black;
-float:left;
-}
+
 #tbody {
-	height:600px;overflow-y:auto;width:900px;	
+	height:600px;overflow-y:auto;width:900px;
+	border:1px solid black;
 }
 table{border-collapse:collapse; width:100%;} 
   .td1{width:100px;}
   .td2{width:100px;}
   .td3{width:340px;}
   .td4{width:120px;}
-  .td5{width:40px;}
   .td6{width:40px;}
   .td7{width:30px;}
   .td8{border-right-width:0;}
+
+#titles {
+bgcolor: grey;
+}
+.t1{width:100px; background: grey;}
+.t2{width:100px; background: grey;}
+.t3{width:340px; background: grey;}
+.t4{width:120px; background: grey;}
+.t6{width:40px;}
+.t7{width:30px;}
+.t8{border-right-width:0;}
+

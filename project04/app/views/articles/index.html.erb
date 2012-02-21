@@ -4,19 +4,20 @@
 <br><br>
 <h1>All the World's Articles</h1>
 
-<%= link_to 'Create an Article', new_article_path %>
+<%= link_to image_tag('icons/add.png') + 'create an article', new_article_path, :title => 'new' %>
+<br><br>
 <div id="wrapper">
+
 <div id="tbody">
 <table>
-  <tr class="titles">
-    <th>Title</th>
-    <th>Author</th>
-    <th>Body</th>
-    <th>Created at</th>
-    <th>Edits</th>
-    <th></th>
-    <th></th>
-    <th></th>
+  <tr>
+    <th class="t1">Title</th>
+    <th class="t2">Author</th>
+    <th class="t3">Body</th>
+    <th class="t4">Created at</th>
+    <th class="t6"></th>
+    <th class="t7"></th>
+    <th class="t8"></th>
   </tr>
 
 <% @articles.each do |article| %>
@@ -25,10 +26,9 @@
     <td class="td2"><%= article.author %></td>
     <td class="td3"><%= article.body %></td>
     <td class="td4"><%= article.created_at.strftime("%a, %b. %d %Y") %></td>
-    <td class="td5"><%= article.n_edited %></td>
-    <td class="td6"><%= link_to 'Show', article, :title => 'Show' %></td>
-    <td class="td7"><%= link_to 'Edit', edit_article_path(article), :title => 'Edit' %></td>
-    <td class="td8"><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete, :title => 'delete' %></td>
+    <td class="td6"><%= link_to image_tag('icons/zoom.png'), article, :title => 'Show' %></td>
+    <td class="td7"><%= link_to image_tag('icons/pencil.png'), edit_article_path(article), :title => 'Edit' %></td>
+    <td class="td8"><%= link_to image_tag('icons/weather_lightning.png'), article, :confirm => 'Are you sure?', :method => :delete, :title => 'delete' %></td>
   </tr>
 <% end %>
 </table>
