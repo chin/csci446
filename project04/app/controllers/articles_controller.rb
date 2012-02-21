@@ -62,7 +62,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     @article.n_edited += 1
-    @req = request.referer
+    @request = request.referer
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
