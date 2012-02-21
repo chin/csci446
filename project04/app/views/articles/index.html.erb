@@ -5,6 +5,7 @@
 <h1>All the World's Articles</h1>
 
 <%= link_to 'Create an Article', new_article_path %>
+<div id="wrapper">
 <div id="tbody">
 <table>
   <tr class="titles">
@@ -20,16 +21,17 @@
 
 <% @articles.each do |article| %>
   <tr>
-    <td><%= article.title %></td>
-    <td><%= article.author %></td>
-    <td><%= article.body %></td>
-    <td><%= article.created_at.strftime("%a, %b. %d %Y") %></td>
-    <td><%= article.n_edited %></td>
-    <td><%= link_to 'Show', article, :title => 'Show' %></td>
-    <td><%= link_to 'Edit', edit_article_path(article), :title => 'Edit' %></td>
-    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete, :title => 'delete' %></td>
+    <td class="td1"><%= article.title %></td>
+    <td class="td2"><%= article.author %></td>
+    <td class="td3"><%= article.body %></td>
+    <td class="td4"><%= article.created_at.strftime("%a, %b. %d %Y") %></td>
+    <td class="td5"><%= article.n_edited %></td>
+    <td class="td6"><%= link_to 'Show', article, :title => 'Show' %></td>
+    <td class="td7"><%= link_to 'Edit', edit_article_path(article), :title => 'Edit' %></td>
+    <td class="td8"><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete, :title => 'delete' %></td>
   </tr>
 <% end %>
 </table>
+</div>
 </div>
 <br />
