@@ -8,7 +8,7 @@
 <br><br>
 <div id="wrapper">
 
-<div id="tbody">
+
 <table>
   <tr>
     <th class="t1">Title</th>
@@ -19,7 +19,9 @@
     <th class="t7"></th>
     <th class="t8"></th>
   </tr>
-
+</table>
+<div id="tbody">
+<table>
 <% @articles.each do |article| %>
   <tr>
     <td class="td1"><%= article.title %></td>
