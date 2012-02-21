@@ -60,11 +60,11 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     @article.n_edited += 1
-    
     respond_to do |format|
       if @article.update_attributes(params[:article])
+        session[:last_article_page] = request.env['HTTP_REFERER']
         format.html { redirect_to articles_url, :notice => 'Article was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render :json => @articles }
       else
         format.html { render :action => "edit" }
         format.json { render :json => @article.errors, :status => :unprocessable_entity }
