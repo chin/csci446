@@ -1,13 +1,11 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-header {
+#header {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 39px;
 }
-tbody {
+#tbody {
+	height:600px;overflow-y:auto;width:1000px;
 	
-}
-titles {
-	background: grey;
 }
