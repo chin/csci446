@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #tbody {
-	height:600px;overflow-y:auto;width:900px;
+	height:600px;overflow-y:auto;width:800px;
 	border:1px solid black; height:225px;
 }
 table{border-collapse:collapse; width:100%;} 
   .td1{width:100px;}
   .td2{width:100px;}
-  .td3{width:340px;}
+  .td3{width:100px;}
   .td4{width:120px;}
   .td6{width:40px;}
   .td7{width:30px;}
@@ -17,7 +17,7 @@ table{border-collapse:collapse; width:100%;}
 
 .t1{width:100px; background: grey;}
 .t2{width:100px; background: grey;}
-.t3{width:340px; background: grey;}
+.t3{width:365px; background: grey;}
 .t4{width:120px; background: grey;}
 .t6{width:40px;}
 .t7{width:30px;}
