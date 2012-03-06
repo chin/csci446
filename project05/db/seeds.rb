@@ -9,11 +9,11 @@ Author.create(:name => 'Robert Frost')
 Author.create(:name => 'Yo Mama')
 Author.create(:name => 'Dracula')
 (1..10).each do | articles |
-	Article.create(:title => 'Lorem Ipsum', :author_id => '1', :body => 'Robert Frost was born in San Diego on...', :n_edited => '0')
+	Article.create(:title => 'Lorem Ipsum', :author_id => 1, :body => 'Robert Frost was born in San Diego on...', :n_edited => '0')
 end
 (1..10).each do | articles |
-	Article.create(:title => 'History of Uranus', :author_id => '2', :body => 'Robert Frost was born in San Diego on...', :n_edited => '0')
+	Article.create(:title => 'History of Uranus', :author_id => 2, :body => 'Robert Frost was born in San Diego on...', :n_edited => '0')
 end
 (1..10).each do | articles |
-	Article.create(:title => 'There Will be Blood', :author_id => '3', :body => 'Robert Frost was born in San Diego on...', :n_edited => '0')
+	Article.create(:title => 'There Will be Blood', :author_id => 3, :body => 'Robert Frost was born in San Diego on...', :n_edited => '0')
 end
