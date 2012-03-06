@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+Author.create(:name => 'Robert Frost')
+
 (1..10).each do | articles |
-	Article.create(:title => 'Lorem Ipsum', :author => 'Robert Frost', :body => 'Robert Frost was born in San Diego on...', :n_edited => '0')
+	Article.create(:title => 'Lorem Ipsum', :author_id => '1', :body => 'Robert Frost was born in San Diego on...', :n_edited => '0')
 end

@@ -10,14 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120216232038) do
+ActiveRecord::Schema.define(:version => 20120306044940) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
-    t.string   "author"
     t.text     "body"
     t.datetime "date"
     t.integer  "n_edited"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "author_id"
+  end
+
+  create_table "authors", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
