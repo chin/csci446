@@ -37,6 +37,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @request = request.referer
     session[:return_to] = request.referer
+    @authors = Author.all
   end
 
   # POST /articles
@@ -45,7 +46,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
     @article.n_edited = 0
     @article.date = Time.current.to_datetime
-
+    @authors = Author.all
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, :notice => 'Article was successfully created.' }

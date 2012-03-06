@@ -13,6 +13,6 @@
   = yield :show
   %body
     %ul.menubar
-      %li= link_to "articles", articles_path
-      %li= link_to "authors", authors_path
+      %li= link_to "articles", articles_path, :title => "articles"
+      %li= link_to "authors", authors_path, :title => "authors"
     = yield
