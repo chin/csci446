@@ -11,6 +11,7 @@ gem 'json'
 gem 'will_paginate' 
 gem 'haml'
 gem 'haml-rails' 
+gem 'erb2haml'
 
 # Gems used only for assets and not required
 # in production environments by default.

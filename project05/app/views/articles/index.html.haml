@@ -1,0 +1,35 @@
+- content_for :index do
+  = '... with a name .com hipsters love'
+%br/
+%br/
+%h1 All the World's Articles
+= link_to image_tag('icons/add.png') + 'create an article', new_article_path, :title => 'new article'
+%br/
+%br/
+= will_paginate @articles
+%table#articles_list
+  %thead
+    %tr
+      %th Title
+      %th Author
+      %th Body
+      %th Created at
+      %th
+  %tfoot
+    %tr
+      %td{:colspan => "5"}
+        %p
+          = pluralize(@articles.size, 'article')
+          \.
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td= h article.title
+        %td= h article.author.name
+        %td= truncate(article.body, :length => 40)
+        %td= article.created_at.strftime("%a, %b. %d %Y")
+        %td
+          = link_to image_tag('icons/zoom.png'), article, :title => 'show article'
+          = link_to image_tag('icons/pencil.png'), edit_article_path(article), :title => 'edit article'
+          = link_to image_tag('icons/weather_lightning.png'), article, :confirm => 'Are you sure?', :method => :delete, :title => 'delete article'
+= will_paginate @articles

@@ -1,0 +1,8 @@
+- content_for :edit do
+  = ['... my cousin works for Bit.ly']
+%br/
+%br/
+= link_to image_tag('icons/arrow_left.png') + 'back', @request, :title => 'Back'
+%h1
+  Editing "#{@article.title}"
+= render 'form'
