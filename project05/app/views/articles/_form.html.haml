@@ -14,7 +14,7 @@
   .field
     = f.label :author
     %br/
-    = f.text_field :author
+    =collection_select(:article, :author_id, @authors, :id, :name, {:prompt => 'Choose Author'})
   .field
     = f.label :body
     %br/

@@ -11,7 +11,7 @@
   = @article.title
 %p
   %b by
-  = @article.author
+  = @article.author.name
   = @article.n_edited
   %b edits since
   = @article.created_at.strftime("%a, %b. %d %Y")

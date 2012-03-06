@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.json
   def new
     @article = Article.new
-
+    @authors = Author.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @article }
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
     @article.n_edited = 0
     @article.date = Time.current.to_datetime
-    @authors = Author.all
+    
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, :notice => 'Article was successfully created.' }
