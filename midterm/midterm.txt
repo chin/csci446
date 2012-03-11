@@ -1,0 +1,68 @@
+1. Basically a POST tells you what resource will be handleing whatever is enclosed in it whereas a PUT tells you the kind of resource that is enclosed. 
+
+2. Relative
+
+3. The protocol and domain name as well as the path of the resource are specified by an absolute URL. Relative  URLS only specify the path.
+
+4. A GET request
+
+5. Yes, request_type=PUT
+
+6. It should probably have a :title.
+
+7. In the most common three tiered app, the database is the storage of the information for the application which resides on a server. The web browser is the client or presentation of the info which commmunicates to the db through the app's logic.
+
+8. 200 OK response code just means that the request suceeded. It has a body, which is just the object requested.
+
+9. 
+class Troll
+  attr_accessor :ugliness, :smelliness, :strength
+  
+  def initialize(grunt = "UNGAH")
+    @grunt = grunt
+    @ugliness, @smelliness, @strength = nil
+  end
+  def speak
+    42.times do { puts @grunt }
+  end
+  def reverse
+    puts @grunt.reverse
+  end
+  def self.propagate
+    Troll.new("eegah")
+  end
+end
+
+10. We should probably define a (boolean) function called fight.
+
+11. Yes, because the troll response to fight might be true but Chin's response is likely false.
+
+12. A Boolean value.
+
+13. The bang means the instance itself will change.
+
+14. It is called duck typing. The system is based on class API's and is pretty loose (but not goose).Basically if it looks like a duck and quacks like a duck, then it is in fact a duck.
+
+15. I think it yeilds an array of string objects.
+
+16. Yes. Both are blocks.
+
+17. No. Ruby functions always return the value of the last expression they evaluated if nothing is specifically stated otherwise.
+
+18. before_save, after_save, before_commit, after_commit
+
+19. controller action: index, new, creat,edit, update, destroy
+HTTP method: GET, GET, POST, GET, PUT, DELETE
+CRUD operation: READ, READ, CREATE, READ, UPDATE, DELETE
+
+20. Browsers do not natively support legit PUT or DELETE requests.
+
+21. Each has it's own database configuration and Rails options. Development should be for your local dev environment whereas Production should be for real-word use, the finished product.
+
+22. If there is a singleton model, or one with only one record. But I am pretty sure if you are being RESTful then you will NEVER use singulars.
+
+23. A hepler method is one that is called inthe view and are sometimes provided for you. 
+
+24. Both tables need a reference to the fk. So in the bee table there should be a column for flower_id, and in the flower table a column for bee_id.
+
+25. They are "ok" if by that you mean they do not mess anything up. You can, however, roll of them into one query by eager loading. 

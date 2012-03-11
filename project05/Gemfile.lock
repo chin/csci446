@@ -130,7 +130,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   json
-  paperclip
+  paperclip (~> 2.3)
   rails (= 3.2.0.rc2)
   sass-rails (~> 3.2.3)
   sqlite3
