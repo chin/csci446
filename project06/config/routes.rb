@@ -2,7 +2,22 @@ Gamez::Application.routes.draw do
   resources :roles
 
   resources :games
+  namespace :admin do
+  
+  resources :users
+    match 'me' => 'users#edit'
+    resources :games
+    resources :roles
+    root :to => 'games#index'
+  end
 
+  namespace :member do
+    resources :users, :only => [:edit, :update]
+    match 'me' => 'users#edit', :as => :me
+    resources :games
+    root :to => 'games#index'
+
+  end
   resources :users, :user_sessions
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
