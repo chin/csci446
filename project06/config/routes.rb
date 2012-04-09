@@ -3,8 +3,7 @@ Gamez::Application.routes.draw do
 
   resources :games
   namespace :admin do
-  
-  resources :users
+    resources :users
     match 'me' => 'users#edit'
     resources :games
     resources :roles
@@ -21,6 +20,7 @@ Gamez::Application.routes.draw do
   resources :users, :user_sessions
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  match 'register' => 'users#new', :as => :register
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -70,7 +70,7 @@ Gamez::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'users'
+  root :to => 'games#index'
 
   # See how all your routes lay out with "rake routes"
 
