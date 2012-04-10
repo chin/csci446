@@ -4,11 +4,13 @@
   = will_paginate @games
 %table
   %tr
-    %th Name
-    %th Rating
+    %th.name Name
+    %th.rating Rating
+    %th.date Date Created
 
 
   - @games.each do |game|
     %tr
-      %td= game.name
-      %td= game.rating
+      %td= game.name= game_name(game)
+      %td= game.rating= game_rating(game)
+      %td.date= game_date(game)

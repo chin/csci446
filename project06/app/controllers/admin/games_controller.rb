@@ -2,7 +2,7 @@ class Admin::GamesController < Admin::AdminController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+     @games = Game.paginate(:page => params[:page], :order => 'created_at desc', :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +44,7 @@ class Admin::GamesController < Admin::AdminController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, :notice => 'Game was successfully created.' }
+        format.html { redirect_to @game, :notice => '#{@game.name} was successfully created.' }
         format.json { render :json => @game, :status => :created, :location => @game }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class Admin::GamesController < Admin::AdminController
 
     respond_to do |format|
       if @game.update_attributes(params[:game])
-        format.html { redirect_to @game, :notice => 'Game was successfully updated.' }
+        format.html { redirect_to @game, :notice => '#{@game.name} was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
