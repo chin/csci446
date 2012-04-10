@@ -8,9 +8,8 @@
     %th.rating Rating
     %th.date Date Created
 
-
   - @games.each do |game|
     %tr
-      %td= game.name= game_name(game)
-      %td= game.rating= game_rating(game)
-      %td.date= game_date(game)
+      %td= position(game)
+      %td= kinyness(game)
+      %td= date(game)

@@ -9,19 +9,25 @@
           %li= msg
   .field
     = f.label :username
-    %br/
-    = f.text_field :username
-  .field
-    = f.label :email
-    %br/
-    = f.text_field :email
+    = f.text_field :username, :disabled => true
   .field
     = f.label :password
-    %br/
     = f.password_field :password
   .field
     = f.label :password_confirmation
-    %br/
     = f.password_field :password_confirmation
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :photo
+    = f.file_field :photo
+    = image_tag @user.photo.url
   .actions
-    = f.submit
+    = f.submit 'Save Changes'

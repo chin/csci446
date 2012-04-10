@@ -2,7 +2,7 @@ class Member::GamesController < Member::MemberController
   # GET /games
   # GET /games.json
   def index
-    @@games = Game.paginate(:page => params[:page], :order => 'created_at desc', :per_page => 10).where(:user_id => current_user.id)
+    @games = Game.paginate(:page => params[:page], :order => 'created_at desc', :per_page => 10).where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
