@@ -37,12 +37,7 @@ class UserSessionsController < ApplicationController
     @user_session.destroy
 
     respond_to do |format|
-      format.html { if @user_session.save && @user_session.user.is_admin? 
-                      redirect_to( admin_root_url, :notice => 'You have logged out.') 
-                    elsif @user_session.save && @user_session.user.is_member? 
-                      redirect_to( member_root_url, :notice => 'You have logged out.')
-                    end
-                  }
+      format.html { redirect_to( root_url, :notice => 'You have logged out.' ) }
       format.json { head :ok }
     end
   end
