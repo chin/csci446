@@ -41,7 +41,7 @@ class Admin::GamesController < Admin::AdminController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
-
+    @game.user_id = current_user.id
     respond_to do |format|
       if @game.save
         format.html { redirect_to @game, :notice => '#{@game.name} was successfully created.' }

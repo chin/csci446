@@ -41,6 +41,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    declarative_authorization (0.5.5)
     erb2haml (0.1.2)
       haml
       hpricot
@@ -130,6 +131,7 @@ PLATFORMS
 DEPENDENCIES
   authlogic
   coffee-rails (~> 3.2.0)
+  declarative_authorization
   erb2haml
   haml
   haml-rails

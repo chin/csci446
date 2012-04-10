@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
-  #before_filter do |c| 
-  #  Authorization.current_user = c.current_user
-  #end
+  before_filter do |c| 
+    Authorization.current_user = c.current_user
+  end
 
   protected
   
