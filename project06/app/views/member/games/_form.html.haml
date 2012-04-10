@@ -11,9 +11,10 @@
     = f.text_area :name
   .field
     = f.label :rating
-    = f.text_area :rating
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
+   .radio_buttons
+      - Game::RATINGS.each do |rating|
+        = f.radio_button :rating, rating, :label => rating.humanize
+        = rating.humanize
+        %br
   .actions
     = f.submit 'Save'

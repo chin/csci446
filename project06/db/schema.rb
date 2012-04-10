@@ -21,17 +21,24 @@ ActiveRecord::Schema.define(:version => 20120409055309) do
   end
 
   create_table "roles", :force => true do |t|
-    t.text     "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",                       :null => false
+    t.string   "description"
+    t.integer  "users_count", :default => 0
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "users", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "username"
     t.string   "email"
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.integer  "role_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end

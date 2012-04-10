@@ -1,5 +1,7 @@
 class Member::MemberController < ActionController::Base
-  filter_access_to :all 
+
+  before_filter :require_user
+  filter_access_to :all
   def index
   	@games = Game.all
 
