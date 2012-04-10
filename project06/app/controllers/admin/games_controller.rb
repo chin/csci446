@@ -44,7 +44,7 @@ class Admin::GamesController < Admin::AdminController
     @game.user_id = current_user.id
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, :notice => '#{@game.name} was successfully created.' }
+        format.html { redirect_to admin_root_url, :notice => '#{@game.name} was successfully created.' }
         format.json { render :json => @game, :status => :created, :location => @game }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class Admin::GamesController < Admin::AdminController
 
     respond_to do |format|
       if @game.update_attributes(params[:game])
-        format.html { redirect_to @game, :notice => '#{@game.name} was successfully updated.' }
+        format.html { redirect_to admin_root_url, :notice => '#{@game.name} was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
@@ -76,7 +76,7 @@ class Admin::GamesController < Admin::AdminController
     @game.destroy
 
     respond_to do |format|
-      format.html { redirect_to games_url }
+      format.html { redirect_to admin_root_url }
       format.json { head :no_content }
     end
   end
