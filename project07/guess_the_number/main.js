@@ -5,7 +5,6 @@ var answer = Math.floor(Math.random() * 101)
 $(function() {
   updateScore(guessesLeft);
   populateHighScores(highScores);
-  gameLogic();
 });
 
 function populateHighScores(scores) {
@@ -19,6 +18,7 @@ function updateScore(score) {
 }
 
 function gameLogic(){
+	document.write("gets called");
   var input = document.getElementById( "guess" );
   var guess = parseFloat( input.value );
   if(guess==answer && guessesLeft>0){
@@ -32,4 +32,5 @@ function gameLogic(){
     guessessLeft -=1;
   }else{
     document.write("<b>BOO YOU WHORE!</b>");
+  }
 }
