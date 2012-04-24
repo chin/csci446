@@ -23,8 +23,6 @@ function gameLogic(){
   updateView(answer);
   if(guess==answer && guessesLeft>0){
     updateView("<b>THE GALACTIC EMPIRE SALUTES YOU!</b>");
-    updateScore(score);
-    score += guessesLeft;
     biWinning();
   }else if(guess<answer && guessesLeft>0){
     valuer("TOO LOW!");
@@ -41,7 +39,7 @@ function gameLogic(){
   function biWinning(){
   	var name=prompt("Please enter your name:");
       if (name!=null && name!=""){
-        populateHighScores(([score, name]));
+        populateHighScores(Array([score, name]));
       }
   }
 
