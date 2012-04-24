@@ -6,7 +6,7 @@ var entry = parseFloat( input.value );
 
 $(function() {
   updateScore(guessesLeft);
-  populateHighScores(highScores); gameLogic();
+  populateHighScores(highScores);
 });
 
 function populateHighScores(scores) {
@@ -16,19 +16,17 @@ function populateHighScores(scores) {
 }
 
 function updateScore(score) {
-  
   $('h2#score span#guessesLeft').append(score);
-
 }
 
 function gameLogic(){
-  if(guess == answer && guessesLeft > 0){
+  if(guess==answer && guessesLeft>0){
     document.write("<b>THE GALACTIC EMPIRE SALUTES YOU!</b>");
     score += guessesLeft;
-  }else if(guess < answer && guessesLeft > 0){
+  }else if(guess<answer && guessesLeft>0){
     document.write("<b>TOO LOW!</b>");
     guessessLeft -=1;
-  }else if(guess > answer && guessesLeft > 0){
+  }else if(guess>answer && guessesLeft>0){
     document.write("<b>TOO HIGH!</b>");
     guessessLeft -=1;
   }else{
