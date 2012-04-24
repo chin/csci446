@@ -20,21 +20,35 @@ function updateScore(score) {
 function gameLogic(){
   var input = document.getElementById( "guess" );
   var guess = parseFloat( input.value );
+  updateView(answer);
   if(guess==answer && guessesLeft>0){
     updateView("<b>THE GALACTIC EMPIRE SALUTES YOU!</b>");
+    updateScore(score);
     score += guessesLeft;
+    biWinning();
   }else if(guess<answer && guessesLeft>0){
-    updateView("<b>TOO LOW!</b>");
-    guessessLeft -=1;
+    valuer("TOO LOW!");
   }else if(guess>answer && guessesLeft>0){
-    updateView("<b>TOO HIGH!</b>");
-    guessessLeft -=1;
+    valuer("TOO HIGH!");
   }else{
     updateView("<b>BOO YOU WHORE!</b>");
   }
 
   function updateView(text){
   	$('p#explanation').append(text);
+  }
+
+  function biWinning(){
+  	var name=prompt("Please enter your name:");
+      if (name!=null && name!=""){
+        populateHighScores(([score, name]));
+      }
+  }
+
+  function valuer(text){
+  	alert(text);
+    guessessLeft -=1;
+    updateScore(score);
   }
 
 }
