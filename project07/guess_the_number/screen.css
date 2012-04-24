@@ -40,3 +40,10 @@ form#guessTheNumber {
   border-bottom: 1px solid #000;
   padding: 20px;
 }
+
+p#explanation {
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px solid #000;
+  padding: 20px;
+}

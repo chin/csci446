@@ -22,7 +22,7 @@ function gameLogic(){
   var guess = parseFloat( input.value );
   updateView(answer);
   if(guess==answer && guessesLeft>0){
-    updateView("<b>THE GALACTIC EMPIRE SALUTES YOU!</b>");
+    updateView("THE GALACTIC EMPIRE SALUTES YOU!");
     biWinning();
   }else if(guess<answer && guessesLeft>0){
     valuer("TOO LOW!");
@@ -31,22 +31,25 @@ function gameLogic(){
   }else{
     updateView("<b>BOO YOU WHORE!</b>");
   }
-
-  function updateView(text){
-  	$('p#explanation').append(text);
-  }
+  gLeft();
+}
+function updateView(text){
+  $('p#explanation').empty;
+  $('p#explanation').append(text);
+ }
 
   function biWinning(){
   	var name=prompt("Please enter your name:");
-      if (name!=null && name!=""){
-        populateHighScores(Array([score, name]));
-      }
+  	  populateHighScores(Array([guessesLeft, name]));
   }
 
   function valuer(text){
   	alert(text);
-    guessessLeft -=1;
-    updateScore(score);
+    guessesLeft = guessesLeft-1 ;
   }
 
-}
+  function gLeft(){
+    $('h2#score span#guessesLeft').empty();
+    $('h2#score span#guessesLeft').append(guessesLeft);
+  }
+
