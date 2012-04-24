@@ -20,7 +20,6 @@ function updateScore(score) {
 function gameLogic(){
   var input = document.getElementById( "guess" );
   var guess = parseFloat( input.value );
-  updateView(answer);
   if(guess==answer && guessesLeft>0){
     updateView("THE GALACTIC EMPIRE SALUTES YOU!");
     biWinning();
@@ -34,7 +33,7 @@ function gameLogic(){
   gLeft();
 }
 function updateView(text){
-  $('p#explanation').empty;
+  $('p#explanation').empty();
   $('p#explanation').append(text);
  }
 
