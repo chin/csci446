@@ -1,6 +1,6 @@
 var guessesLeft = 10;
 var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
-var answer = Math.floor(Math.random() * 101)
+var answer = Math.floor(Math.random() * 101);
 
 $(function() {
   updateScore(guessesLeft);
@@ -18,19 +18,23 @@ function updateScore(score) {
 }
 
 function gameLogic(){
-	document.write("gets called");
   var input = document.getElementById( "guess" );
   var guess = parseFloat( input.value );
   if(guess==answer && guessesLeft>0){
-    document.write("<b>THE GALACTIC EMPIRE SALUTES YOU!</b>");
+    updateView("<b>THE GALACTIC EMPIRE SALUTES YOU!</b>");
     score += guessesLeft;
   }else if(guess<answer && guessesLeft>0){
-    document.write("<b>TOO LOW!</b>");
+    updateView("<b>TOO LOW!</b>");
     guessessLeft -=1;
   }else if(guess>answer && guessesLeft>0){
-    document.write("<b>TOO HIGH!</b>");
+    updateView("<b>TOO HIGH!</b>");
     guessessLeft -=1;
   }else{
-    document.write("<b>BOO YOU WHORE!</b>");
+    updateView("<b>BOO YOU WHORE!</b>");
   }
+
+  function updateView(text){
+  	$('p#explanation').append(text);
+  }
+
 }
