@@ -8,6 +8,7 @@ $(function() {
 });
 
 function populateHighScores(scores) {
+  scores.sort(compareNumbers);
   for (var i = 0; i < scores.length; ++i) {
     $('div#highScores').append("<p>" + scores[i][0] + " " + scores[i][1] + "</p>");
   }
@@ -36,20 +37,24 @@ function gameLogic(){
 function updateView(text){
   $('p#explanation').empty();
   $('p#explanation').append(text);
- }
+}
 
-  function biWinning(){
-  	var name=prompt("Please enter your name:");
-  	  populateHighScores(Array([guessesLeft, name]));
-  }
+function biWinning(){
+  var name=prompt("Please enter your name:");
+  highScores.push(guessesLeft, name);
+  populateHighScores();
+}
 
-  function valuer(text){
-  	alert(text);
-    guessesLeft = guessesLeft-1 ;
-  }
+function valuer(text){
+  alert(text);
+  guessesLeft = guessesLeft-1 ;
+}
 
-  function gLeft(){
-    $('h2#score span#guessesLeft').empty();
-    $('h2#score span#guessesLeft').append(guessesLeft);
-  }
+function gLeft(){
+  $('h2#score span#guessesLeft').empty();
+  $('h2#score span#guessesLeft').append(guessesLeft);
+}
 
+function compareNumbers(a, b) {
+     return parseInt(a[0]) - parseInt(b[0]);
+}
